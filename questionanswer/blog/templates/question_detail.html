@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Savol: {{ question.name }}</h2>
+  <h3>Optionlar:</h3>
+  <ul>
+    {% for option in question.options.all %}
+      <li>{{ option.name }}{% if option.correct %} - To'g'ri{% endif %}</li>
+    {% empty %}
+      <li>Optionlar mavjud emas</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'create_option' question.id %}" class="btn btn-primary">Yangi Option yaratish</a>
+{% endblock %}

@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card text-bg-success mb-3" style="width: 100%; max-width: 22rem;">
+                <div class="card-header">Savollar to'plami</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ quiz.name }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-bg-danger mb-3" style="width: 100%; max-width: 22rem;">
+                <div class="card-header">Savollar soni</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ quiz.questions_count }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-bg-warning mb-3" style="width: 100%; max-width: 22rem;">
+                <div class="card-header">Savol uchun belgilangan vaqt</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ quiz.amount }} min</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-bg-info mb-3" style="width: 100%; max-width: 22rem;">
+                <div class="card-header">Qatnashuvchilar</div>
+                <div class="card-body">
+                    <h5 class="card-title">23</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="MuiTableContainer-root css-939q39">
+        <table class="MuiTable-root css-10y3fr9" aria-label="table in dashboard">
+            <thead class="MuiTableHead-root css-ucz4w7">
+            <tr class="MuiTableRow-root MuiTableRow-head css-1a1fzdj">
+                <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18drrcl" scope="col">Name
+                </th>
+                <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18drrcl" scope="col">Email
+                </th>
+                <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18drrcl" scope="col">Date
+                </th>
+                <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18drrcl" scope="col">Salary
+                </th>
+                <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18drrcl" scope="col">Age</th>
+                <th class="MuiTableCell-root MuiTableCell-head MuiTableCell-sizeMedium css-18drrcl" scope="col">Status
+                </th>
+            </tr>
+            </thead>
+            <tbody class="MuiTableBody-root css-ceeiht">
+            <tr class="MuiTableRow-root MuiTableRow-hover css-lfnorv">
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-2x20pz">
+                    <div class="MuiBox-root css-j7qwjs"><p class="MuiTypography-root MuiTypography-body1 css-1muldh">
+                        Sally Quinn</p><span class="MuiTypography-root MuiTypography-caption css-hy29ye">Human Resources Assistant</span>
+                    </div>
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    eebsworth2m@sbwire.com
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">09/27/2018</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">$19586.23</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">27</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    <div class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorPrimary MuiChip-filledPrimary css-lvr0df">
+                        <span class="MuiChip-label MuiChip-labelMedium css-14vsv3w">current</span></div>
+                </td>
+            </tr>
+            <tr class="MuiTableRow-root MuiTableRow-hover css-lfnorv">
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-2x20pz">
+                    <div class="MuiBox-root css-j7qwjs"><p class="MuiTypography-root MuiTypography-body1 css-1muldh">
+                        Margaret Bowers</p><span class="MuiTypography-root MuiTypography-caption css-hy29ye">Nuclear Power Engineer</span>
+                    </div>
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    kocrevy0@thetimes.co.uk
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">09/23/2016</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">$23896.35</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">61</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    <div class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorSuccess MuiChip-filledSuccess css-rzoen8">
+                        <span class="MuiChip-label MuiChip-labelMedium css-14vsv3w">professional</span></div>
+                </td>
+            </tr>
+            <tr class="MuiTableRow-root MuiTableRow-hover css-lfnorv">
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-2x20pz">
+                    <div class="MuiBox-root css-j7qwjs"><p class="MuiTypography-root MuiTypography-body1 css-1muldh">
+                        Minnie Roy</p><span class="MuiTypography-root MuiTypography-caption css-hy29ye">Environmental Specialist</span>
+                    </div>
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">ediehn6@163.com</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">10/15/2017</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">$18991.67</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">59</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    <div class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorError MuiChip-filledError css-ccsiwf">
+                        <span class="MuiChip-label MuiChip-labelMedium css-14vsv3w">rejected</span></div>
+                </td>
+            </tr>
+            <tr class="MuiTableRow-root MuiTableRow-hover css-lfnorv">
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-2x20pz">
+                    <div class="MuiBox-root css-j7qwjs"><p class="MuiTypography-root MuiTypography-body1 css-1muldh">
+                        Ralph Leonard</p><span class="MuiTypography-root MuiTypography-caption css-hy29ye">Sales Representative</span>
+                    </div>
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    dfalloona@ifeng.com
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">06/12/2018</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">$19252.12</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">30</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    <div class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorWarning MuiChip-filledWarning css-k6n1sd">
+                        <span class="MuiChip-label MuiChip-labelMedium css-14vsv3w">resigned</span></div>
+                </td>
+            </tr>
+            <tr class="MuiTableRow-root MuiTableRow-hover css-lfnorv">
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-2x20pz">
+                    <div class="MuiBox-root css-j7qwjs"><p class="MuiTypography-root MuiTypography-body1 css-1muldh">
+                        Annie Martin</p><span
+                            class="MuiTypography-root MuiTypography-caption css-hy29ye">Operator</span></div>
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    sganderton2@tuttocitta.it
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">03/24/2018</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">$13076.28</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">66</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    <div class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorInfo MuiChip-filledInfo css-2z10nj">
+                        <span class="MuiChip-label MuiChip-labelMedium css-14vsv3w">applied</span></div>
+                </td>
+            </tr>
+            <tr class="MuiTableRow-root MuiTableRow-hover css-lfnorv">
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-2x20pz">
+                    <div class="MuiBox-root css-j7qwjs"><p class="MuiTypography-root MuiTypography-body1 css-1muldh">
+                        Adeline Day</p><span class="MuiTypography-root MuiTypography-caption css-hy29ye">Senior Cost Accountant</span>
+                    </div>
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">hnisius4@gnu.org
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">08/25/2017</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">$10909.52</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">33</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    <div class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorSuccess MuiChip-filledSuccess css-rzoen8">
+                        <span class="MuiChip-label MuiChip-labelMedium css-14vsv3w">professional</span></div>
+                </td>
+            </tr>
+            <tr class="MuiTableRow-root MuiTableRow-hover css-lfnorv">
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-2x20pz">
+                    <div class="MuiBox-root css-j7qwjs"><p class="MuiTypography-root MuiTypography-body1 css-1muldh">
+                        Lora Jackson</p><span
+                            class="MuiTypography-root MuiTypography-caption css-hy29ye">Geologist</span></div>
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    ghoneywood5@narod.ru
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">06/01/2017</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">$17803.80</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">61</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    <div class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorPrimary MuiChip-filledPrimary css-lvr0df">
+                        <span class="MuiChip-label MuiChip-labelMedium css-14vsv3w">current</span></div>
+                </td>
+            </tr>
+            <tr class="MuiTableRow-root MuiTableRow-hover css-lfnorv">
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-2x20pz">
+                    <div class="MuiBox-root css-j7qwjs"><p class="MuiTypography-root MuiTypography-body1 css-1muldh">
+                        Rodney Sharp</p><span class="MuiTypography-root MuiTypography-caption css-hy29ye">Cost Accountant</span>
+                    </div>
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    dcrossman3@google.co.jp
+                </td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">12/03/2017</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">$12336.17</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">22</td>
+                <td class="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-11u1jp0">
+                    <div class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorSuccess MuiChip-filledSuccess css-rzoen8">
+                        <span class="MuiChip-label MuiChip-labelMedium css-14vsv3w">professional</span></div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock main %}

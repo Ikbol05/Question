@@ -15,17 +15,17 @@ class Quiz(models.Model):
     def questions(self):
         return Question.objects.filter(quiz=self)
 
-
-class QuestionSet(models.Model):
-    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    @property
+    def questions_count(self):
+        return Question.objects.filter(quiz=self).count()
 
 
 class Question(models.Model):
     name = models.CharField(max_length=255)
-    set = models.ForeignKey(QuestionSet, on_delete=models.CASCADE)
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE, default=1)
 
     def str(self):
-        return self.name
+        return self.name, self.quiz
 
     @property
     def options(self):

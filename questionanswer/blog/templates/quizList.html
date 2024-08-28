@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block main %}
+<div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        {% for quiz in quizes %}
+        <div class="col">
+            <div class="card h-100">
+                <img src="{{ quiz.img }}" class="card-img-top" alt="Skyscrapers"/>
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ quiz.name }}</h5>
+                    <p class="card-text"></p>
+                </div>
+                <div class="card-footer d-flex justify-content-center">
+                    <a href="{% url 'quizDetail' quiz.id %}" class="btn btn-primary btn-rounded">Batafsil</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock main %}
+
