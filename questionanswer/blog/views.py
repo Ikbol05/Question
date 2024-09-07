@@ -10,6 +10,9 @@ from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import OptionForm
 
+from django.http import HttpResponse
+import pandas as pd
+from .models import AnswerDetail, Quiz
 
 
 
@@ -20,7 +23,7 @@ def user_login(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('index')
+            return redirect('quizList.html')
     return render(request, 'blog/userlogin.html')
 
 
@@ -105,3 +108,65 @@ def delete_option(request, option_id):
         option.delete()
         return redirect('question_detail', question_id=option.question.id)
     return render(request, 'confirm_delete_option.html', {'option': option})
+
+
+
+
+
+def export_answers_to_excel(request, quiz_id):
+    quiz = Quiz.objects.get(id=quiz_id)
+    answers = AnswerDetail.objects.filter(answer__quiz=quiz)
+
+    data = {
+        'User': [answer.answer.author.username for answer in answers],
+        'Question': [answer.question.name for answer in answers],
+        'User Choice': [answer.user_choice.name for answer in answers],
+        'Is Correct': [answer.is_correct for answer in answers],
+    }
+    df = pd.DataFrame(data)
+
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = f'attachment; filename=quiz_{quiz_id}_answers.xlsx'
+    df.to_excel(response, index=False, engine='openpyxl')
+
+    return response
+
+
+def export_answer_detail_to_excel(request, answer_id):
+    answer_details = AnswerDetail.objects.filter(answer_id=answer_id)
+
+    data = {
+        'Question': [detail.question.name for detail in answer_details],
+        'User Choice': [detail.user_choice.name for detail in answer_details],
+        'Is Correct': [detail.is_correct for detail in answer_details],
+    }
+
+    df = pd.DataFrame(data)
+
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    response['Content-Disposition'] = f'attachment; filename=answer_{answer_id}_details.xlsx'
+    df.to_excel(response, index=False, engine='openpyxl')
+
+    return response
+
+
+from reportlab.pdfgen import canvas
+
+
+def render_quiz_to_pdf(request, quiz_id):
+    quiz = Quiz.objects.get(id=quiz_id)
+    answers = AnswerDetail.objects.filter(answer__quiz=quiz)
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = f'attachment; filename=quiz_{quiz_id}_results.pdf'
+    p = canvas.Canvas(response)
+    p.drawString(100, 800, f'Quiz: {quiz.name}')
+    y = 750
+    for answer in answers:
+        p.drawString(100, y,
+                     f'User: {answer.answer.author.username}, Question: {answer.question.name}, Choice: {answer.user_choice.name}, Is Correct: {answer.is_correct}')
+        y -= 30
+
+    p.showPage()
+    p.save()
+
+    return response
